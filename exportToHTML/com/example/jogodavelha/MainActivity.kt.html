@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">jogaodavelha</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">activity</span><span class="s2">.</span><span class="s1">ComponentActivity</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">activity</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">setContent</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">background</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">clickable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">shape</span><span class="s2">.</span><span class="s1">RoundedCornerShape</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Text</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">BorderStroke</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">border</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Alignment</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">Modifier</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">font</span><span class="s2">.</span><span class="s1">FontWeight</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">tooling</span><span class="s2">.</span><span class="s1">preview</span><span class="s2">.</span><span class="s1">Preview</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">dp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">sp</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Button</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">ButtonDefaults</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : ComponentActivity</span><span class="s2">() {</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">setContent </span><span class="s2">{</span>
+            <span class="s1">JogoDaVelha</span><span class="s2">()</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">JogoDaVelha</span><span class="s2">() {</span>
+    <span class="s3">//variaveis de controle</span>
+    <span class="s0">var </span><span class="s1">estadoJogo by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">(</span><span class="s1">List</span><span class="s2">(</span><span class="s4">9</span><span class="s2">) { </span><span class="s5">&quot;&quot; </span><span class="s2">}) }</span>
+    <span class="s0">var </span><span class="s1">jogadorAtual by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">(</span><span class="s5">&quot;X&quot;</span><span class="s2">) }</span>
+    <span class="s0">var </span><span class="s1">jogoAtivo by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">(</span><span class="s0">true</span><span class="s2">) }</span>
+    <span class="s0">var </span><span class="s1">msgEstadoJogo by remember </span><span class="s2">{ </span><span class="s1">mutableStateOf</span><span class="s2">(</span><span class="s5">&quot;&quot;</span><span class="s2">) }</span>
+
+    <span class="s3">//lista de posicoes que ganha o jogo</span>
+    <span class="s0">val </span><span class="s1">condicaoVitoria </span><span class="s2">= </span><span class="s1">listOf</span><span class="s2">(</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">5</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">6</span><span class="s2">, </span><span class="s4">7</span><span class="s2">, </span><span class="s4">8</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s2">, </span><span class="s4">6</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">7</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s2">, </span><span class="s4">8</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">8</span><span class="s2">),</span>
+        <span class="s1">listOf</span><span class="s2">(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">6</span><span class="s2">)</span>
+    <span class="s2">)</span>
+<span class="s3">//funcao que observa o jogo</span>
+    <span class="s0">fun </span><span class="s1">verificarGanhador</span><span class="s2">()</span><span class="s1">: String </span><span class="s2">{</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">posicao </span><span class="s0">in </span><span class="s1">condicaoVitoria</span><span class="s2">) {</span>
+            <span class="s0">val </span><span class="s2">(</span><span class="s1">a</span><span class="s2">, </span><span class="s1">b</span><span class="s2">, </span><span class="s1">c</span><span class="s2">) = </span><span class="s1">posicao</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">a</span><span class="s2">].</span><span class="s1">isNotEmpty</span><span class="s2">() &amp;&amp; </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">a</span><span class="s2">] == </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">b</span><span class="s2">] &amp;&amp; </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">a</span><span class="s2">] == </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">c</span><span class="s2">]) {</span>
+                <span class="s1">jogoAtivo </span><span class="s2">= </span><span class="s0">false</span>
+                <span class="s0">return </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">a</span><span class="s2">]</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s0">if </span><span class="s2">(!</span><span class="s1">estadoJogo</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s5">&quot;&quot;</span><span class="s2">)) {</span>
+            <span class="s1">jogoAtivo </span><span class="s2">= </span><span class="s0">false</span>
+            <span class="s0">return </span><span class="s5">&quot;EMPATE&quot;</span>
+        <span class="s2">}</span>
+        <span class="s0">return </span><span class="s5">&quot;&quot;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">val </span><span class="s1">ganhador </span><span class="s2">= </span><span class="s1">verificarGanhador</span><span class="s2">()</span>
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">ganhador</span><span class="s2">.</span><span class="s1">isNotEmpty</span><span class="s2">()) {</span>
+        <span class="s1">msgEstadoJogo </span><span class="s2">= </span><span class="s0">when </span><span class="s2">(</span><span class="s1">ganhador</span><span class="s2">) {</span>
+            <span class="s5">&quot;EMPATE&quot; </span><span class="s2">-&gt; </span><span class="s5">&quot;O jogo terminou em empate!&quot;</span>
+            <span class="s0">else </span><span class="s2">-&gt; </span><span class="s5">&quot;O jogador </span><span class="s0">$</span><span class="s1">ganhador </span><span class="s5">venceu!&quot;</span>
+        <span class="s2">}</span>
+    <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+        <span class="s1">msgEstadoJogo </span><span class="s2">= </span><span class="s5">&quot;Vez do jogador </span><span class="s0">$</span><span class="s1">jogadorAtual</span><span class="s5">&quot;</span>
+    <span class="s2">}</span>
+<span class="s3">//apenas uma coluna central</span>
+    <span class="s1">Column</span><span class="s2">(</span>
+        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+            <span class="s2">.</span><span class="s1">fillMaxSize</span><span class="s2">()</span>
+            <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+            <span class="s2">.</span><span class="s1">background</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">(</span><span class="s4">0xFFA9CCE3</span><span class="s2">)),</span>
+        <span class="s1">verticalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">Center</span><span class="s2">,</span>
+        <span class="s1">horizontalAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">CenterHorizontally</span>
+    <span class="s2">) {</span>
+
+        <span class="s3">//texto titulo</span>
+        <span class="s1">Text</span><span class="s2">(</span>
+            <span class="s1">text </span><span class="s2">= </span><span class="s5">&quot;Jogo da Velha&quot;</span><span class="s2">,</span>
+            <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">32</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+            <span class="s1">fontWeight </span><span class="s2">= </span><span class="s1">FontWeight</span><span class="s2">.</span><span class="s1">Bold</span><span class="s2">,</span>
+            <span class="s1">color </span><span class="s2">= </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">White</span>
+        <span class="s2">)</span>
+        <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">))</span>
+
+        <span class="s3">//texto estado do jogo</span>
+        <span class="s1">Text</span><span class="s2">(</span>
+            <span class="s1">text </span><span class="s2">= </span><span class="s1">msgEstadoJogo</span><span class="s2">,</span>
+            <span class="s1">fontSize </span><span class="s2">= </span><span class="s4">20</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">,</span>
+            <span class="s1">fontWeight </span><span class="s2">= </span><span class="s1">FontWeight</span><span class="s2">.</span><span class="s1">Bold</span><span class="s2">,</span>
+            <span class="s1">color </span><span class="s2">= </span><span class="s0">if </span><span class="s2">(</span><span class="s1">ganhador </span><span class="s2">== </span><span class="s5">&quot;EMPATE&quot;</span><span class="s2">) </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">Black </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">ganhador</span><span class="s2">.</span><span class="s1">isNotEmpty</span><span class="s2">()) </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">Green </span><span class="s0">else </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">White</span><span class="s2">, </span><span class="s3">// ↑ Cor do texto: amarelo para empate, verde para vencedor, branco para status normal</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s4">8</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+        <span class="s2">)</span>
+        <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">))</span>
+<span class="s3">//tabuleiro</span>
+        <span class="s1">Grid</span><span class="s2">(</span><span class="s1">gridState </span><span class="s2">= </span><span class="s1">estadoJogo</span><span class="s2">, </span><span class="s1">onCellClicked </span><span class="s2">= { </span><span class="s1">index </span><span class="s2">-&gt;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">jogoAtivo </span><span class="s2">&amp;&amp; </span><span class="s1">estadoJogo</span><span class="s2">[</span><span class="s1">index</span><span class="s2">].</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+                <span class="s1">estadoJogo </span><span class="s2">= </span><span class="s1">estadoJogo</span><span class="s2">.</span><span class="s1">toMutableList</span><span class="s2">().</span><span class="s1">apply </span><span class="s2">{</span>
+                    <span class="s0">this</span><span class="s2">[</span><span class="s1">index</span><span class="s2">] = </span><span class="s1">jogadorAtual</span>
+                <span class="s2">}</span>
+                <span class="s1">jogadorAtual </span><span class="s2">= </span><span class="s0">if </span><span class="s2">(</span><span class="s1">jogadorAtual </span><span class="s2">== </span><span class="s5">&quot;X&quot;</span><span class="s2">) </span><span class="s5">&quot;O&quot; </span><span class="s0">else </span><span class="s5">&quot;X&quot;</span>
+                <span class="s1">verificarGanhador</span><span class="s2">() </span><span class="s3">// Atualiza o status do jogo após cada jogada</span>
+            <span class="s2">}</span>
+        <span class="s2">})</span>
+
+        <span class="s1">Spacer</span><span class="s2">(</span><span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">16</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">))</span>
+<span class="s3">//reset</span>
+        <span class="s1">Button</span><span class="s2">(</span>
+            <span class="s1">onClick </span><span class="s2">= {</span>
+                <span class="s1">estadoJogo </span><span class="s2">= </span><span class="s1">List</span><span class="s2">(</span><span class="s4">9</span><span class="s2">) { </span><span class="s5">&quot;&quot; </span><span class="s2">}</span>
+                <span class="s1">jogadorAtual </span><span class="s2">= </span><span class="s5">&quot;X&quot;</span>
+                <span class="s1">jogoAtivo </span><span class="s2">= </span><span class="s0">true</span>
+                <span class="s1">msgEstadoJogo </span><span class="s2">= </span><span class="s5">&quot;Vez do jogador </span><span class="s0">$</span><span class="s1">jogadorAtual</span><span class="s5">&quot;</span>
+            <span class="s2">},</span>
+            <span class="s1">colors </span><span class="s2">= </span><span class="s1">ButtonDefaults</span><span class="s2">.</span><span class="s1">buttonColors</span><span class="s2">(</span>
+                <span class="s1">containerColor </span><span class="s2">= </span><span class="s1">Color</span><span class="s2">(</span><span class="s4">0xFF777777</span><span class="s2">),</span>
+                <span class="s1">contentColor </span><span class="s2">= </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">White</span>
+            <span class="s2">),</span>
+            <span class="s1">shape </span><span class="s2">= </span><span class="s1">RoundedCornerShape</span><span class="s2">(</span><span class="s4">0</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+            <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                <span class="s2">.</span><span class="s1">fillMaxWidth</span><span class="s2">()</span>
+                <span class="s2">.</span><span class="s1">height</span><span class="s2">(</span><span class="s4">48</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+        <span class="s2">) {</span>
+            <span class="s1">Text</span><span class="s2">(</span><span class="s5">&quot;Reiniciar Jogo&quot;</span><span class="s2">)</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s3">//funcao tabuleiro do jogo</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">Grid</span><span class="s2">(</span><span class="s1">gridState: List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt;, </span><span class="s1">onCellClicked: </span><span class="s2">(</span><span class="s1">Int</span><span class="s2">) -&gt; </span><span class="s1">Unit</span><span class="s2">) {</span>
+    <span class="s1">Column </span><span class="s2">{</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s0">in </span><span class="s4">0 </span><span class="s1">until </span><span class="s4">3</span><span class="s2">) {</span>
+            <span class="s1">Row </span><span class="s2">{</span>
+                <span class="s0">for </span><span class="s2">(</span><span class="s1">j </span><span class="s0">in </span><span class="s4">0 </span><span class="s1">until </span><span class="s4">3</span><span class="s2">) {</span>
+                    <span class="s0">val </span><span class="s1">index </span><span class="s2">= </span><span class="s1">i </span><span class="s2">* </span><span class="s4">3 </span><span class="s2">+ </span><span class="s1">j</span>
+                    <span class="s1">Cell</span><span class="s2">(</span>
+                        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">Modifier</span>
+                            <span class="s2">.</span><span class="s1">padding</span><span class="s2">(</span><span class="s4">4</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">size</span><span class="s2">(</span><span class="s4">80</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)</span>
+                            <span class="s2">.</span><span class="s1">clickable </span><span class="s2">{ </span><span class="s1">onCellClicked</span><span class="s2">(</span><span class="s1">index</span><span class="s2">) },</span>
+                        <span class="s1">text </span><span class="s2">= </span><span class="s1">gridState</span><span class="s2">[</span><span class="s1">index</span><span class="s2">]</span>
+                    <span class="s2">)</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s3">//funcao de cada quadrado</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">Cell</span><span class="s2">(</span><span class="s1">modifier: Modifier </span><span class="s2">= </span><span class="s1">Modifier</span><span class="s2">, </span><span class="s1">text: String</span><span class="s2">) {</span>
+    <span class="s1">Box</span><span class="s2">(</span>
+        <span class="s1">modifier </span><span class="s2">= </span><span class="s1">modifier</span>
+            <span class="s2">.</span><span class="s1">background</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">LightGray</span><span class="s2">, </span><span class="s1">RoundedCornerShape</span><span class="s2">(</span><span class="s4">10</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">))</span>
+            <span class="s2">.</span><span class="s1">border</span><span class="s2">(</span><span class="s1">BorderStroke</span><span class="s2">(</span><span class="s4">2</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">DarkGray</span><span class="s2">), </span><span class="s1">RoundedCornerShape</span><span class="s2">(</span><span class="s4">10</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">)),</span>
+        <span class="s1">contentAlignment </span><span class="s2">= </span><span class="s1">Alignment</span><span class="s2">.</span><span class="s1">Center</span>
+    <span class="s2">) {</span>
+        <span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s1">text</span><span class="s2">, </span><span class="s1">fontSize </span><span class="s2">= </span><span class="s4">24</span><span class="s2">.</span><span class="s1">sp</span><span class="s2">, </span><span class="s1">color </span><span class="s2">= </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">Black</span><span class="s2">)</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@Preview</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">PreviewJogoDaVelha</span><span class="s2">() {</span>
+    <span class="s1">JogoDaVelha</span><span class="s2">()</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
